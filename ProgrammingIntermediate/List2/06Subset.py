@@ -5,7 +5,10 @@ for _ in range(T):
     n, k = list(map(int, input().split()))
     data.append((n, k))
 
-################## sol1
+
+# sol1
+
+
 def sol1(arr, board):
     n = arr[0]
     k = arr[1]
@@ -17,15 +20,19 @@ def sol1(arr, board):
             if i & (1 << j):
                 candi.append(board[j])
         if len(candi) == n and sum(candi) == k:
-            count +=1
+            count += 1
     return count
 
-for i, arr in enumerate(data):
-    print("#%s" %(i + 1), sol1(arr, board))
 
-################ sol2
+for i, arr in enumerate(data):
+    print("#%s" % (i + 1), sol1(arr, board))
+
+# sol2
+
+
 def combination(arr, m):
     visit = []
+
     def generator(arr, m, i=0):
         if len(visit) == m:
             yield visit
@@ -37,7 +44,8 @@ def combination(arr, m):
                 visit.pop()
     yield from generator(arr, m)
 
-def sol2(arr, baord):
+
+def sol2(arr, board):
     n = arr[0]
     k = arr[1]
     count = 0
@@ -46,5 +54,6 @@ def sol2(arr, baord):
             count += 1
     return count
 
+
 for i, arr in enumerate(data):
-    print("#%s" %(i + 1), sol2(arr, board))
+    print("#%s" % (i + 1), sol2(arr, board))
