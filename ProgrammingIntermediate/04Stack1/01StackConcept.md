@@ -1,4 +1,4 @@
-g# Stack 자료구조의 개념
+# Stack 자료구조의 개념
 
 ## Stack의 특성
 
