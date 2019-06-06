@@ -25,7 +25,7 @@ DFS(깊이 우선 탐색) 방법
 
 ## DFS(깊이 우선 탐색)의 예
 
-~~~ps
+~~~python
 visted[], stack[] 초기화
 DFS(v)
 	v 방문;
