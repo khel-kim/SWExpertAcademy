@@ -110,8 +110,8 @@ backtrack(a, 0, 3)
 
 ~~~python
 def backtrack(a, k, input):
-    global MAXCANDIDATAES
-    c = [0] * MAXCANDIDATAES
+    global MAXCANDIDATES
+    c = [0] * MAXCANDIDATES
     
     if k == input:
         for i in range(1, k + 1):
