@@ -1,10 +1,3 @@
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.left = None
-        self.right = None
-
-
 def in_order_traverse(top):
     global index, visit
     try:
