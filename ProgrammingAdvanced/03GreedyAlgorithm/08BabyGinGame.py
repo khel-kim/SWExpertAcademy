@@ -8,26 +8,26 @@ def is_run(count):
     for i, value in enumerate(count):
         if value >= 3:
             count[i] -= 3
-            return True, count
-    return False, count
+            return True
+    return False
 
 
 def is_triplet(count):
     if len(count) < 3:
-        return False, count
+        return False
     else:
         for i in range(len(count) - 2):
             if count[i] > 0 and count[i + 1] > 0 and count[i + 2]:
                 count[i] -= 1
                 count[i + 1] -= 1
                 count[i + 2] -= 1
-                return True, count
-        return False, count
+                return True
+        return False
 
 
 def check(count):
-    check1, count = is_run(count)
-    check2, count = is_triplet(count)
+    check1 = is_run(count)
+    check2 = is_triplet(count)
     # print(check1, check2)
     if check1 or check2:
         return True
