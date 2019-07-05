@@ -48,5 +48,4 @@ def sol(case):
 
 
 for i, case in enumerate(data):
->>>>>>> refs/remotes/origin/master
     print("#%s" % (i + 1), sol(case))
