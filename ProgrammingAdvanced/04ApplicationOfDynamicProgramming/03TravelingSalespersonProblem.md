@@ -22,11 +22,26 @@
 ### 순회 외판원 문제를 해결하는 동적 계획법 알고리즘
 
 - V는 모든 정점의 집합이고, A는 V의 부분집합
-
 - $$D[v_i][A]$$는 $$A$$에 속한 각 정점을 정확히 한번씩만 거쳐서 $$v_i$$에서 $$v_1$$으로 가는 최단경로
-
 - $$D[v_1][V-\{v_1\}] = min_{2 \leq j \leq n}(W[1][j] + D[v_j][V-\{v_1, v_j\}])$$
+- $$D[v_i][A] = min_{v_i \in A}(W[i][j] + D[v_j][A - \{v_j\}]) if A \neq \empty$$
+- $$D[v_i][\empty] = W[i][1]$$
 
-  
+```python
+# W: 인접 행렬, minlength: 최적일주여행경로의 가중치 합, n: 정점의 개수
+# D: 부분 문제의 해를 저장하기 위한 저장소
+def travel(n, W):
+    numer D[1 .. n][subset of V - {v1}]
+    
+    for i in 2 -> n:
+        D[i][emptyset] <- W[i][1]
+        
+    for k in 1 -> n - 2:
+        for all subsets A in V - {v1} containing k vertices:
+            for i such that i != and vi not in A:
+                D[i][A] = minimun_(vj in A)(W[i][j] + D[vj][A - {vj}])
+    
+    D[1][V - {v1}] = minimum(2 <= j <= n)(W[1][j] + D[vj][A - {v1}])
+    minlenght = D[1][V - {v1}]
+```
 
-  
