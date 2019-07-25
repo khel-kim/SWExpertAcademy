@@ -1,5 +1,7 @@
 n, m = map(int, input().split())
 board = []
+b_location = None
+r_location = None
 for i in range(n):
     tmp = list(input())
     for j, char in enumerate(tmp):
@@ -117,7 +119,8 @@ pair_movements2 = ["up", "down"]
 queue = [(r_location, b_location, "left", 1),
          (r_location, b_location, "right", 1),
          (r_location, b_location, "up", 1),
-         (r_location, b_location, "down", 1),]
+         (r_location, b_location, "down", 1),
+         ]
 last = queue[-1]
 answer = -1
 while queue:
